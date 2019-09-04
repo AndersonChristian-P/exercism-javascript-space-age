@@ -1,4 +1,4 @@
-const orbitalPeriods = () => {
+const orbitalPeriods = function () {
   let earth = 31557600
   return {
     earth,
@@ -12,4 +12,7 @@ const orbitalPeriods = () => {
   }
 }
 
-export const age = (ageSeconds, planet) => ((ageSeconds / orbitalPeriods[planet.toLowerCase()]) / 31555323).toFixed(2)
+export const age = (planet, ageSeconds) => (
+  Number((ageSeconds / orbitalPeriods()[planet]).toFixed(2))
+)
+
