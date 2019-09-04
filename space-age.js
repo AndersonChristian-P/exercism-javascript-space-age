@@ -1,8 +1,15 @@
-//
-// This is only a SKELETON file for the 'Space Age' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const orbitalPeriods = () => {
+  let earth = 31557600
+  return {
+    earth,
+    mercury: 0.2408467 * earth,
+    venus: 0.61519726 * earth,
+    mars: 1.8808158 * earth,
+    jupiter: 11.862615 * earth,
+    saturn: 29.447498 * earth,
+    uranus: 84.016846 * earth,
+    neptune: 164.79132 * earth
+  }
+}
 
-export const age = () => {
-  throw new Error("Remove this statement and implement this function");
-};
+export const age = (ageSeconds, planet) => ((ageSeconds / orbitalPeriods[planet.toLowerCase()]) / 31555323).toFixed(2)
