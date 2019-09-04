@@ -12,7 +12,5 @@ const orbitalPeriods = function () {
   }
 }
 
-export const age = (planet, ageSeconds) => (
-  Number((ageSeconds / orbitalPeriods()[planet]).toFixed(2))
-)
+export const age = (planet, ageInSeconds) => Number((ageInSeconds / orbitalPeriods()[planet]).toFixed(2))
 
